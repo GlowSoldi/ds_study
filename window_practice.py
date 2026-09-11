@@ -22,7 +22,7 @@ SELECT
     wear_rank
 FROM ranked_parts
 WHERE wear_rank <= 3
-ORDER BY "Type", wear_rank ASC
+ORDER BY "Type", wear_rank
 """
 df = pd.read_sql_query(sql_query, engine)
 print(df)
