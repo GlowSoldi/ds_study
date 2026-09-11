@@ -1,8 +1,6 @@
-import pandas as pd
-
-import seaborn as sns
-
 import matplotlib.pyplot as plt
+import pandas as pd
+import seaborn as sns
 
 fleet_data = [
     {"id": "Лок-1", "mileage": 15000, "defects": 1},
