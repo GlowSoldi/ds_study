@@ -8,6 +8,7 @@ engine = create_engine("postgresql://postgres:mentor@localhost:5432/railway")
 
 sql_query = """
 SELECT
+    "Type",
     "Air temperature [K]",
     "Process temperature [K]",
     "Rotational speed [rpm]",
@@ -21,6 +22,8 @@ df["Power [W]"] = df["Rotational speed [rpm]"] * df["Torque [Nm]"] * 0.10472
 df["Temperature gradient [K]"] = (
     df["Process temperature [K]"] - df["Air temperature [K]"]
 )
+df["Type"] = df["Type"].map({"L": 0, "M": 1, "H": 2})
+
 X = df.drop(columns=["Machine failure"])
 y = df["Machine failure"]
 
